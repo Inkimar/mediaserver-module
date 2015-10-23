@@ -22,5 +22,5 @@ ert\",\"X Resolution\":\"1 dot\",\"Jpeg Comment\":\"CREATOR: gd-jpeg v1.0 (using
 
 
 DELETE ( 204 for successful delete, 404 for unsuccesful delete)
-curl -i  -X DELETE http://127.0.0.1:8080/MediaServerResteasy/media/image/863ec044-17cf-4c87-81cc-783ab13230ae
+curl -i  -X DELETE http://127.0.0.1:8080/MediaServerResteasy/media/863ec044-17cf-4c87-81cc-783ab13230ae
 

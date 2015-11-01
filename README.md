@@ -30,7 +30,7 @@ The Mediaserver should provide services for other systems.
 4. To delete media files (Delete)
 
 ## Storing the media files 
-The mediafiles are stored in the filesystem, which has a depth of 3 levels.
+The mediafiles are stored in the filesystem, which has a depth of 6 levels.
 Only one mediafile is stored, no derivates for images are created at the same time. <p>
 All medifiles are stored using UUID as names. <p>
 UUID, " Universally unique identifier, 128-bit number." ( http://tools.ietf.org/html/rfc4122) <p>

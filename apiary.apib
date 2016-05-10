@@ -18,7 +18,7 @@ Notes related resources of the **Mediaserver API**
         { "uuid":"5df74718-9c7c-4252-90c2-92e4742ee4d6","owner":"dina","visibility":"public","filename":"chess.png","mimetype":"image/png","mediaURL":"127.0.0.1/MediaServerResteasy/media/5df74718-9c7c-4252-90c2-92e4742ee4d6?format=image/png","taggar":"author:skyttner&game:chess","alt":null,"hash":"0782dd0a2fef7bf7e08bd68978e63e27","tag":[{"id":null,"tagKey":"author","tagValue":"skyttner","dateCreated":null},{"id":null,"tagKey":"game","tagValue":"chess","dateCreated":null}],"description":[{"uuid":null,"legend":"this is chess","lang":"sv_SE","comment":""}],"lico":[{"id":1,"abbrev":"CC BY","version":"3.0","issuer":"http://creativecommons.org/licenses/by/","uri":"Attribution","name":"Creative Commons"}],"isExported":false,"exif":"N/A"}
 
 
-### Retrieve metadata, arg. <uuid> [GET /MediaServerResteasy/media/v1/5df74718-9c7c-4252-90c2-92e4742ee4d6?content=metadata]
+### Retrieve metadata, using the <uuid> [GET /MediaServerResteasy/media/v1/5df74718-9c7c-4252-90c2-92e4742ee4d6?content=metadata]
 + Response 200 (application/json)
 
     + Header
@@ -29,7 +29,7 @@ Notes related resources of the **Mediaserver API**
 
             { "uuid":"5df74718-9c7c-4252-90c2-92e4742ee4d6","owner":"dina","visibility":"public","filename":"chess.png","mimetype":"image/png","mediaURL":"127.0.0.1/MediaServerResteasy/media/5df74718-9c7c-4252-90c2-92e4742ee4d6?format=image/png","taggar":"author:skyttner&game:chess","alt":null,"hash":"0782dd0a2fef7bf7e08bd68978e63e27","tag":[{"id":null,"tagKey":"author","tagValue":"skyttner","dateCreated":null},{"id":null,"tagKey":"game","tagValue":"chess","dateCreated":null}],"description":[{"uuid":null,"legend":"this is chess","lang":"sv_SE","comment":""}],"lico":[{"id":1,"abbrev":"CC BY","version":"3.0","issuer":"http://creativecommons.org/licenses/by/","uri":"Attribution","name":"Creative Commons"}],"isExported":false,"exif":"N/A"}
 
-### Retrieve metadata, arg. tag = <key:value> [GET /MediaServerResteasy/media/v1/search?author=skyttner]
+### Retrieve metadata, using the tag = <key:value> [GET /MediaServerResteasy/media/v1/search?author=skyttner]
 + Response 200 (application/json)
 
     + Header

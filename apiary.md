@@ -1,0 +1,68 @@
+
+FORMAT: 1A
+
+# Mediaserver
+
+# Group Mediaserver
+Notes related resources of the **Mediaserver API**
+
+## MediaServerResteasy [/MediaServerResteasy/media/]
+
+### Add a mediafile, base64-encoded [POST]
+
++ Request (application/json)
+
+        { "owner":"dina","access":"public","licenseType":"CC BY","legend":"this is chess","fileName":"chess.png","taggar": ["author:skyttner", "game:chess"],"fileDataBase64":"iVBORw0KGgoAAAANSUhEUgAAAAIAAAACAQMAAABIeJ9nAAAABlBMVEUAAAD///+l2Z/dAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH4AQZCR0TdgIZugAAABl0RVh0Q29tbWVudABDcmVhdGVkIHdpdGggR0lNUFeBDhcAAAAMSURBVAjXY3BgaAAAAUQAwetZAwkAAAAASUVORK5CYII=" }
+
++ Response 201 (application/json)
+
+        { "uuid":"5df74718-9c7c-4252-90c2-92e4742ee4d6","owner":"dina","visibility":"public","filename":"chess.png","mimetype":"image/png","mediaURL":"127.0.0.1/MediaServerResteasy/media/5df74718-9c7c-4252-90c2-92e4742ee4d6?format=image/png","taggar":"author:skyttner&game:chess","alt":null,"hash":"0782dd0a2fef7bf7e08bd68978e63e27","tag":[{"id":null,"tagKey":"author","tagValue":"skyttner","dateCreated":null},{"id":null,"tagKey":"game","tagValue":"chess","dateCreated":null}],"description":[{"uuid":null,"legend":"this is chess","lang":"sv_SE","comment":""}],"lico":[{"id":1,"abbrev":"CC BY","version":"3.0","issuer":"http://creativecommons.org/licenses/by/","uri":"Attribution","name":"Creative Commons"}],"isExported":false,"exif":"N/A"}
+
+
+### Retrieve metadata, using the <uuid> [GET /MediaServerResteasy/media/v1/5df74718-9c7c-4252-90c2-92e4742ee4d6?content=metadata]
++ Response 200 (application/json)
+
+    + Header
+
+            X-My-Header: The Value
+
+    + Body
+
+            { "uuid":"5df74718-9c7c-4252-90c2-92e4742ee4d6","owner":"dina","visibility":"public","filename":"chess.png","mimetype":"image/png","mediaURL":"127.0.0.1/MediaServerResteasy/media/5df74718-9c7c-4252-90c2-92e4742ee4d6?format=image/png","taggar":"author:skyttner&game:chess","alt":null,"hash":"0782dd0a2fef7bf7e08bd68978e63e27","tag":[{"id":null,"tagKey":"author","tagValue":"skyttner","dateCreated":null},{"id":null,"tagKey":"game","tagValue":"chess","dateCreated":null}],"description":[{"uuid":null,"legend":"this is chess","lang":"sv_SE","comment":""}],"lico":[{"id":1,"abbrev":"CC BY","version":"3.0","issuer":"http://creativecommons.org/licenses/by/","uri":"Attribution","name":"Creative Commons"}],"isExported":false,"exif":"N/A"}
+
+### Retrieve metadata, using the tag = <key:value> [GET /MediaServerResteasy/media/v1/search?author=skyttner]
++ Response 200 (application/json)
+
+    + Header
+
+            X-My-Header: The Value
+
+    + Body
+
+             { "uuid":"5df74718-9c7c-4252-90c2-92e4742ee4d6","owner":"dina","visibility":"public","filename":"chess.png","mimetype":"image/png","mediaURL":"127.0.0.1/MediaServerResteasy/media/5df74718-9c7c-4252-90c2-92e4742ee4d6?format=image/png","taggar":"author:skyttner&game:chess","alt":null,"hash":"0782dd0a2fef7bf7e08bd68978e63e27","tag":[{"id":null,"tagKey":"author","tagValue":"skyttner","dateCreated":null},{"id":null,"tagKey":"game","tagValue":"chess","dateCreated":null}],"description":[{"uuid":null,"legend":"this is chess","lang":"sv_SE","comment":""}],"lico":[{"id":1,"abbrev":"CC BY","version":"3.0","issuer":"http://creativecommons.org/licenses/by/","uri":"Attribution","name":"Creative Commons"}],"isExported":false,"exif":"N/A"}
+
+
+
+### Retrieve base64-encoded mediafile [GET /MediaServerResteasy/media/v1/base64/5df74718-9c7c-4252-90c2-92e4742ee4d6]
++ Response 200
+
+    + Header
+
+            X-My-Header: The Value
+
+    + Body
+
+            { "iVBORw0KGgoAAAANSUhEUgAAAAIAAAACAQMAAABIeJ9nAAAABlBMVEUAAAD///+l2Z/dAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH4AQZCR0TdgIZugAAABl0RVh0Q29tbWVudABDcmVhdGVkIHdpdGggR0lNUFeBDhcAAAAMSURBVAjXY3BgaAAAAUQAwetZAwkAAAAASUVORK5CYII=" }
+ 
+ 
+### Update a mediafile [PUT]
++ Request (application/json)
+
+        { "mediaUUID":"5df74718-9c7c-4252-90c2-92e4742ee4d6","access":"protected" }
+
++ Response 200 (application/json)
+
+        { "uuid":"5df74718-9c7c-4252-90c2-92e4742ee4d6","owner":"dina","visibility":"protected","filename":"chess.png","mimetype":"image/png","mediaURL":"127.0.0.1/MediaServerResteasy/media/5df74718-9c7c-4252-90c2-92e4742ee4d6?format=image/png","taggar":null,"alt":null,"hash":"0782dd0a2fef7bf7e08bd68978e63e27","tag":[],"system":[],"description":[{"uuid":10097,"legend":"this is chess","lang":"sv_SE","comment":""}],"lico":[{"id":1,"abbrev":"CC BY","version":"3.0","issuer":"http://creativecommons.org/licenses/by/","uri":"Attribution","name":"Creative Commons"}],"isExported":false,"exif":"N/A" }
+ 
+### Remove a mediafile [DELETE]
++ Response 204
